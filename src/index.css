@@ -1,0 +1,31 @@
+:root {
+    font-family: 'Public Sans', sans-serif;
+    --blue-100: #eff6ff;
+    --blue-200: #e2e8f0;
+    --blue-300: #cbd5e1;
+    --blue-400: #bfdbfe;
+    --blue-500: #aabbcc;
+    --blue-600: #93c5fd;
+    --blue-700: #94a3b8;
+    --blue-800: #60a5fa;
+    --blue-900: #64748b;
+    --blue-1000: #3b82f6;
+    --blue-1100: #1da1f2;
+    --blue-1200: #4b5563;
+    --blue-1300: #475569;
+    --blue-1400: #374151;
+    --blue-1500: #334155;
+    --blue-1600: #243c5a;
+    --blue-1700: #1e293b;
+    --blue-1800: #1f2937;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
