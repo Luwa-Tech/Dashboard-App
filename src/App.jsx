@@ -1,9 +1,9 @@
 import { createBrowserRouter, Route, createRoutesFromElements, RouterProvider } from "react-router-dom"
-import Layout from "./components/layout/layout"
-import Dashboard from "./pages/dashboard/dashboard"
-import Calendar from "./pages/calendar/calendar"
-import Board from "./pages/trello-board/board"
-import Users from "./pages/users/users"
+import Layout from "./components/layout"
+import Dashboard from "./pages/dashboard"
+import Calendar from "./pages/calendar"
+import Board from "./pages/board"
+import Users from "./pages/users"
 
 
 const App = () => {
