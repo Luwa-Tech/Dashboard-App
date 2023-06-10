@@ -4,12 +4,12 @@ export const cardsData = [
   {
     title: "Revenue",
     change: 24,
-    amount: 42056,
+    amount: 42056
   },
   {
     title: "Orders",
-    change: -14,
-    amount: 52125.03,
+    change: 14,
+    amount: 52125.03
   },
   {
     title: "Expenses",

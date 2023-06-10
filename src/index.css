@@ -1,5 +1,6 @@
 :root {
     font-family: 'Public Sans', sans-serif;
+    scroll-behavior: smooth;
     --blue-100: #eff6ff;
     --blue-200: #e2e8f0;
     --blue-300: #cbd5e1;
@@ -42,7 +43,7 @@ a {
 }
 
 
-/*SIDEBAR------------------------------------------ */
+/*SIDEBAR COMPONENT------------------------------------------ */
 .sidebar--container {
     background-color: var(--blue-1000);
     padding: 1em 1.2em;
@@ -97,6 +98,143 @@ a {
 } */
 
 
-/* HEADER------------------------------------ */
+/* HEADER COMPONENT------------------------------------ */
+.header-section {
+    border: 2px solid red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: em 0; */
+    margin-bottom: 4.5em;
+}
+
+.header-search_bar {
+    background-color: rgba(255, 255, 255, 0.496);
+    width: 30%;
+    max-width: 25rem;
+    padding: 1rem;
+    border-radius: 8px;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    border: none;
+    justify-content: center;
+    gap: 8px;
+}
+
+.header-search_bar>input{
+    background: transparent;
+    color: white;
+    outline: none;
+    border: none;
+    padding: 0;
+    width: 100%;
+}
+
+.header-profile {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-profile_image {
+    width: 20%;
+    height: 20%;
+}
+
+.header-profile p {
+    line-height: 0.5;
+}
+
+/* DASHBOARD PAGE------------------------------------- */
+
+/* CARD COMPONENT */
+.card-section {
+    background-color: var(--blue-500);
+    padding: 0.3em 1.2em;
+    border-radius: 8px;
+}
+
+.card-section div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-section h2 {
+    font-weight: 700;
+}
+
+.card-section div select {
+    padding: 0.35em 0.4em;
+    background-color: var(--blue-1000);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    transition: all 1s ease-in-out;
+}
+
+.card-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+}
+
+.cards--data_item {
+    display: flex;
+    flex-direction: column;
+
+    /* text-align: left; */
+}
+
+.cards--data_item div {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards--data_item div .change {
+    color: green;
+    font-size: .7rem;
+}
+
+.cards--data_item .amount {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.cards--data_item .amount span {
+    font-size: .8rem;  
+}
 
 
+/* STATISTICS COMPONENT */
+.statistics-container {
+    background-color: var(--blue-500);
+    padding: 0.3em 1.2em;
+    border-radius: 8px;
+    margin-top: 1em;
+}
+
+.statistics-cards {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.statistics-icon_container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.statistics-arrowIcon {
+    background: var(--blue-1000);
+    padding: 0.2em 0.2em;
+    border-radius: 8px;
+}
