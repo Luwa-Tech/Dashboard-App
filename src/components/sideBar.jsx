@@ -9,25 +9,25 @@ const sideBarItems = [
         "id": 1,
         "path": "/",
         "pageName": "Dashboard",
-        "icon": <MdSpaceDashboard size={25} color="white"/>
+        "icon": <MdSpaceDashboard size={25} />
     },
     {
         "id": 2,
         "path": "calendar",
         "pageName": "Calendar",
-        "icon": <AiFillCalendar size={25} color="white"/>
+        "icon": <AiFillCalendar size={25} />
     },
     {
         "id": 3,
         "path": "board",
         "pageName": "Trello Board",
-        "icon": <FaTasks size={25} color="white"/>
+        "icon": <FaTasks size={25} />
     },
     {
         "id": 4,
         "path": "users",
         "pageName": "Users",
-        "icon": <AiOutlineTable size={25} color="white"/>
+        "icon": <AiOutlineTable size={25} />
     },
 ]
 

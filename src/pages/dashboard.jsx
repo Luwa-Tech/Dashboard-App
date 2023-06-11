@@ -1,5 +1,6 @@
 import { cardsData, groupNumber } from "../data"
 import Statistics from "../components/statistics"
+import Orders from "../components/orders"
 
 const Dashboard = () => {
     const cardItems = cardsData.map(item => {
@@ -14,8 +15,9 @@ const Dashboard = () => {
         )
     })
     return (
-        <main >
-            <section className="card-section">
+        <main className="dashboard-wrapper">
+           
+            <section className="card-section card">
                 <div>
                     <h2>Dashboard</h2>
                     <select>
@@ -30,10 +32,14 @@ const Dashboard = () => {
                 </div>
             </section>
 
-            <section>
+            <section className="statistics">
                 <Statistics />
             </section>
-            <section>orders today</section>
+
+
+            <section className="orders">
+                <Orders />
+            </section>
         </main>
     )
 }

@@ -7,13 +7,11 @@ import Header from "../components/header"
 
 const Layout = () => {
     return (
-        <>
+        <div className="layout">
         <SideBar />
-        <main className="layout">
         <Header />
         <Outlet />
-        </main>
-        </>
+        </div>
     )
 }
 

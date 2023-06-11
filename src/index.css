@@ -19,12 +19,22 @@
     --blue-1600: #243c5a;
     --blue-1700: #1e293b;
     --blue-1800: #1f2937;
+
+    --transparent-black: rgba(0, 0, 0, 0.294);
+    --black: #111111;
+    --grey: rgba(255, 255, 255, 0.597);
+    --orange: #eb5830;
+    --green: rgb(54, 234, 54);
+    --orange-gradient: linear-gradient(
+      268.35deg,
+      rgba(255, 70, 70, 0.99) 3.47%,
+      rgba(255, 114, 70, 0.99) 60.18%
+    );
 }
 
 body {
     margin: 0;
     padding: 0;
-    background-color: var(--blue-100);
 }
 
 * {
@@ -35,35 +45,56 @@ a {
     text-decoration: none;
 }
 
-.layout {
-    margin-left: 4em;
-    padding: 0.2em 2em;
-    background-color: lightblue;
+p {
+    line-height: .4;
+}
 
+.layout {
+    /* height: 100vh; */
+    font-family: "Public Sans", sans-serif;
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto 1fr auto;
+
+}
+
+.layout>:nth-child(1) {
+    grid-row: 1/ span 4;
+}
+
+.layout>:nth-child(2) {
+    grid-column: 2/ span 12;
+}
+
+.layout>:nth-child(3) {
+    grid-column: 2/ span 12;
+    grid-row: 2/ span 4
 }
 
 
 /*SIDEBAR COMPONENT------------------------------------------ */
 .sidebar--container {
-    background-color: var(--blue-1000);
-    padding: 1em 1.2em;
+    padding: 1em 0;
 
     position: fixed;
     top: 0;
     bottom: 0;
-    width: 5%;
+    width: 8.2%;
     transition: all 0.5s;
+    height: 100vh;
 
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 
 .logo {
     width: 3em;
     margin-bottom: 2em;
-    filter: invert(100%);
 }
 
 .sidebar-nav_elements {
@@ -76,8 +107,12 @@ a {
 
 .items {
     margin: 0.4em 0;
-    background-color: inherit;
     padding: 0.3em 0.6em;
+}
+
+.items>svg {
+    color: var(--orange)
+
 }
 
 .items:hover {
@@ -100,12 +135,13 @@ a {
 
 /* HEADER COMPONENT------------------------------------ */
 .header-section {
-    border: 2px solid red;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* padding: em 0; */
-    margin-bottom: 4.5em;
+    padding: .3em 2em;
+    margin-bottom: 3em;
+
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
 }
 
 .header-search_bar {
@@ -117,14 +153,13 @@ a {
     height: 2rem;
     display: flex;
     align-items: center;
-    border: none;
     justify-content: center;
     gap: 8px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .header-search_bar>input{
     background: transparent;
-    color: white;
     outline: none;
     border: none;
     padding: 0;
@@ -149,10 +184,32 @@ a {
 
 /* DASHBOARD PAGE------------------------------------- */
 
+/* DASHBOARD PAGE LAYOUT */
+.dashboard-wrapper {
+    padding: 2em 2em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1.2rem;
+    row-gap: .9rem;
+}
+
+.card {
+    grid-column: 1/span 2;
+    grid-row: span 1;
+}
+
+.orders {
+    grid-column: 3;
+    grid-row: 1/ span 2;
+}
+
+.statistics {
+    grid-column: 1/ span 2;
+}
 /* CARD COMPONENT */
 .card-section {
     background-color: var(--blue-500);
-    padding: 0.3em 1.2em;
+    padding: 1.5em 1.2em;
     border-radius: 8px;
 }
 
@@ -168,7 +225,7 @@ a {
 
 .card-section div select {
     padding: 0.35em 0.4em;
-    background-color: var(--blue-1000);
+    background-color: var(--orange);
     border: none;
     border-radius: 5px;
     color: white;
@@ -185,8 +242,6 @@ a {
 .cards--data_item {
     display: flex;
     flex-direction: column;
-
-    /* text-align: left; */
 }
 
 .cards--data_item div {
@@ -215,9 +270,8 @@ a {
 /* STATISTICS COMPONENT */
 .statistics-container {
     background-color: var(--blue-500);
-    padding: 0.3em 1.2em;
+    padding: 1.6em 1.2em;
     border-radius: 8px;
-    margin-top: 1em;
 }
 
 .statistics-cards {
@@ -238,3 +292,35 @@ a {
     padding: 0.2em 0.2em;
     border-radius: 8px;
 }
+
+/* ORDERS COMPONENT */
+.orders-section {
+    background-color: var(--blue-500);
+    padding: 1.1em 1.5em;
+    border-radius: 8px;
+   
+}
+
+.orders-section>:nth-child(1){
+    display: flex;
+    justify-content: center;
+    gap: 11px;
+}
+
+.orders-section>:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.orders_data-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.orders_data-container>:nth-child(2) {
+    text-align: end;
+}
+
