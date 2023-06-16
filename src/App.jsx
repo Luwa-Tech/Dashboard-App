@@ -2,7 +2,7 @@ import { createBrowserRouter, Route, createRoutesFromElements, RouterProvider } 
 import Layout from "./components/layout"
 import Dashboard from "./pages/dashboard"
 import Calendar from "./pages/calendar"
-import Board from "./pages/board"
+import BoardPage from "./pages/board"
 import Users from "./pages/users"
 
 
@@ -12,7 +12,7 @@ const App = () => {
     <Route path="/" element={<Layout />}>
       <Route index element={<Dashboard/>} />
       <Route path="calendar" element={<Calendar/>} />
-      <Route path="board" element={<Board/>} />
+      <Route path="board" element={<BoardPage/>} />
       <Route path="users" element={<Users/>} />
     </Route>
   ))

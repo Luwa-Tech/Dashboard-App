@@ -21,6 +21,7 @@
     --blue-1800: #1f2937;
 
     --transparent-black: rgba(0, 0, 0, 0.294);
+    --transparent-grey: rgba(192, 192, 192, 0.294);
     --black: #111111;
     --grey: rgba(255, 255, 255, 0.597);
     --orange: #eb5830;
@@ -340,6 +341,164 @@ p {
     height: 2.5rem!important;
 }
 
+/* change border color later */
 td {
     border : 1px solid black
+}
+
+
+/* BOARD PAGE ------------------------------------------*/
+.board-container {
+    padding: 0 0.2em;
+    margin: auto;
+}
+
+
+
+/* .board-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+} */
+.board-container>:nth-child(1) {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* .react-kanban-board{
+ color: #333;
+
+} */
+
+/* color: var(--grey); */
+
+.react-kanban-board >:nth-child(1) {
+    width: 100%;
+}
+
+.react-kanban-board>:nth-child(1)> div {
+    width: 24%;
+}
+
+.react-kanban-column {
+    /* background-color: var(--transparent-black); */
+    border-radius: 8px;
+}
+
+.react-kanban-column>:nth-child(2)>div>div {
+    width: 100%;
+}
+
+.kanban-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* background: var(--transparent-black); */
+    padding: 1rem;
+    gap: 1.5rem;
+    margin-top: 1.2rem;
+    border-radius: 5px;
+}
+
+.kanban-card>:nth-child(1) {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remove-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.column-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 8px;
+}
+
+.react-kanban-column input {
+    padding: .3em .4em;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.294);
+
+}
+
+.column-header>svg{
+    cursor: pointer
+}
+
+.react-kanban-column-header__button {
+    padding: .3em .4em;
+    border: none;
+    margin-left: .2em;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.294);
+
+}
+
+    
+.modal-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    color: white
+}
+
+.modal-container>div {
+    margin-top: 2rem;
+}
+
+.label {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.input {
+    color: white;
+    font: inherit;
+    margin-top: 12px;
+    display: block;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid rgb(98, 98, 98);
+    font-size: 1.2rem;
+    font-weight: 300;
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+    resize: none
+}
+
+.saveButton {
+    width: 6rem;
+    align-self: flex-end;
+    margin-top: 1.5rem;
+    background: var(--orange-gradient);
+    border: none;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.saveButton:disabled {
+    background: grey;
+}
+
+
+/* USERS PAGE ------------------------------------------*/
+.user-table_container {
+    width: 80%;
+    margin: auto;   
+}
+
+.MuiTableRow-root, 
+.MuiTableCell-root {
+    border: none;
 }
