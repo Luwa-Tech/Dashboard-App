@@ -56,64 +56,62 @@ const BoardPage = () => {
 
     return (
         <main className="board-container">
-            <h2>Trello Board</h2>
-            <Board 
-            allowAddColumn
-            allowRenameColumn
-            allowRemoveCard
-            onColumnDragEnd={handleColumnMove}
-            onCardDragEnd={handleCardMove}
-            renderCard={(props) => (
-                <div className='kanban-card' style={getGradient(props)}>
-                    <div>
-                        <span>
-                            {props.title}
-                        </span>
-                        <button className='remove-button' type='button'
-                            onClick={() => {
-                                const updatedBoard = removeCard(boards,
-                                    getColumn(props),
-                                    props
-                                )
-                                setBoards(updatedBoard)
-                            }}
-                        >
-                            <RxCross2 color="white" size={15} />
-                        </button>
+            <div className="board">
+                <h2>Trello Board</h2>
+                <Board
+                allowAddColumn
+                allowRenameColumn
+                allowRemoveCard
+                onColumnDragEnd={handleColumnMove}
+                onCardDragEnd={handleCardMove}
+                renderCard={(props) => (
+                    <div className='kanban-card' style={getGradient(props)}>
+                        <div>
+                            <span>
+                                {props.title}
+                            </span>
+                            <button className='remove-button' type='button'
+                                onClick={() => {
+                                    const updatedBoard = removeCard(boards,
+                                        getColumn(props),
+                                        props
+                                    )
+                                    setBoards(updatedBoard)
+                                }}
+                            >
+                                <RxCross2 color="black" size={15} />
+                            </button>
+                        </div>
+                        <span>{props.description}</span>
                     </div>
-                    <span>{props.description}</span>
-                </div>
-            )}
-            renderColumnHeader={(props) => {
-                const handleCardAdd = (title, detail)=> {
-                const card = {
-                    id : new Date().getTime(),
-                    title, 
-                    description: detail
-                };
-
-                const updatedBoard = addCard(boards, props, card)
-                setBoards(updatedBoard)
-                setOpenModal(false)
-
-            }
-                return (
-                    <div className='column-header'>
-                        <span>{props.title}</span>
-
-                        <IoMdAdd
-                            color="white"
-                            size={25} title="Add card"
-                            onClick={()=>setOpenModal(true)}
-                        />
-                        <BoardModal visible={openModal} handleCardAdd={handleCardAdd}
-                            onClose={() => setOpenModal(false)} />
-                    </div>
-                )
-            }}
-            >
-                {boards}
-            </Board>
+                )}
+                renderColumnHeader={(props) => {
+                    const handleCardAdd = (title, detail)=> {
+                    const card = {
+                        id : new Date().getTime(),
+                        title,
+                        description: detail
+                    };
+                    const updatedBoard = addCard(boards, props, card)
+                    setBoards(updatedBoard)
+                    setOpenModal(false)
+                }
+                    return (
+                        <div className='column-header'>
+                            <span>{props.title}</span>
+                            <IoMdAdd
+                                 title="Add card"
+                                onClick={()=>setOpenModal(true)}
+                            />
+                            <BoardModal visible={openModal} handleCardAdd={handleCardAdd}
+                                onClose={() => setOpenModal(false)} />
+                        </div>
+                    )
+                }}
+                >
+                    {boards}
+                </Board>
+            </div>
         </main>
     )
 }

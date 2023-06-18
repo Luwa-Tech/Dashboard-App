@@ -1,25 +1,6 @@
-:root {
+html {
     font-family: 'Public Sans', sans-serif;
     scroll-behavior: smooth;
-    --blue-100: #eff6ff;
-    --blue-200: #e2e8f0;
-    --blue-300: #cbd5e1;
-    --blue-400: #bfdbfe;
-    --blue-500: #aabbcc;
-    --blue-600: #93c5fd;
-    --blue-700: #94a3b8;
-    --blue-800: #60a5fa;
-    --blue-900: #64748b;
-    --blue-1000: #3b82f6;
-    --blue-1100: #1da1f2;
-    --blue-1200: #4b5563;
-    --blue-1300: #475569;
-    --blue-1400: #374151;
-    --blue-1500: #334155;
-    --blue-1600: #243c5a;
-    --blue-1700: #1e293b;
-    --blue-1800: #1f2937;
-
     --transparent-black: rgba(0, 0, 0, 0.294);
     --transparent-grey: rgba(192, 192, 192, 0.294);
     --black: #111111;
@@ -31,6 +12,10 @@
       rgba(255, 70, 70, 0.99) 3.47%,
       rgba(255, 114, 70, 0.99) 60.18%
     );
+}
+
+html.dark {
+    --orange: green;
 }
 
 body {
@@ -70,7 +55,8 @@ p {
 
 .layout>:nth-child(3) {
     grid-column: 2/ span 12;
-    grid-row: 2/ span 4
+    grid-row: 2/ span 4;
+    background-color: var(--transparent-grey);
 }
 
 
@@ -81,7 +67,7 @@ p {
     position: fixed;
     top: 0;
     bottom: 0;
-    width: 8.2%;
+    width: 8%;
     transition: all 0.5s;
     height: 100vh;
 
@@ -89,7 +75,7 @@ p {
     flex-direction: column;
     align-items: center;
 
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    /* box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4); */
 }
 
 
@@ -139,10 +125,10 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: .3em 2em;
-    margin-bottom: 3em;
+    padding: .1em 2em;
+    
 
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+    /* box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4); */
 }
 
 .header-search_bar {
@@ -156,7 +142,8 @@ p {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    /* box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3); */
+    border: 1px solid rgb(212, 210, 210);
 }
 
 .header-search_bar>input{
@@ -187,7 +174,7 @@ p {
 
 /* DASHBOARD PAGE LAYOUT */
 .dashboard-wrapper {
-    padding: 2em 2em;
+    padding: 3em 2em;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 1.2rem;
@@ -209,9 +196,10 @@ p {
 }
 /* CARD COMPONENT */
 .card-section {
-    background-color: var(--blue-500);
-    padding: 1.5em 1.2em;
+    background-color: white;
+    padding: .4em 1.2em;
     border-radius: 8px;
+    font-size: .9rem;
 }
 
 .card-section div {
@@ -226,7 +214,7 @@ p {
 
 .card-section div select {
     padding: 0.35em 0.4em;
-    background-color: var(--orange);
+    background: var(--orange-gradient);
     border: none;
     border-radius: 5px;
     color: white;
@@ -253,7 +241,7 @@ p {
 }
 
 .cards--data_item div .change {
-    color: green;
+    color: var(--green);
     font-size: .7rem;
 }
 
@@ -270,9 +258,10 @@ p {
 
 /* STATISTICS COMPONENT */
 .statistics-container {
-    background-color: var(--blue-500);
-    padding: 1.6em 1.2em;
+    background-color: white;
+    padding: 1.3em 1.2em;
     border-radius: 8px;
+    font-size: .9rem;
 }
 
 .statistics-cards {
@@ -289,30 +278,29 @@ p {
 }
 
 .statistics-arrowIcon {
-    background: var(--blue-1000);
+    background: var(--orange-gradient);
     padding: 0.2em 0.2em;
     border-radius: 8px;
+    color: white;
 }
 
 /* ORDERS COMPONENT */
 .orders-section {
-    background-color: var(--blue-500);
-    padding: 1.1em 1.5em;
+    background-color: white;
+    padding: .8em 1.5em;
     border-radius: 8px;
+    font-size: .9rem;
    
 }
 
 .orders-section>:nth-child(1){
     display: flex;
     justify-content: center;
-    gap: 11px;
+    gap: 8px;
 }
 
 .orders-section>:nth-child(2) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    text-align: center;
 }
 
 .orders_data-container {
@@ -325,12 +313,21 @@ p {
     text-align: end;
 }
 
+.orders_data-container>:nth-child(2)>h3>span {
+    color: var(--green);
+    margin-left: .2em;
+    font-size: 1rem;
+}
+
 /* CALENDAR PAGE------------------------------------- */
 .calendar-container> div {
    width: 80%;
    max-width: 1100px;
-   margin: auto;
-   padding: 0.3em 0.5em;
+   margin: 2em auto;
+   padding: 0.7em 0.7em;
+   border-radius: 3px;
+   background: white;
+   
 }
 
 .fc-event{
@@ -346,29 +343,26 @@ td {
     border : 1px solid black
 }
 
-
 /* BOARD PAGE ------------------------------------------*/
 .board-container {
     padding: 0 0.2em;
-    margin: auto;
+    height: 100vh;
 }
 
+.board-container .board {
+    margin-top: 5em;
+}
 
-
-/* .board-container{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem;
-} */
-.board-container>:nth-child(1) {
-    font-size: 1.5rem;
+.board-container .board h2 {
+    font-size: 1.3rem;
     text-align: center;
     font-weight: bold;
 }
 
+
 /* .react-kanban-board{
  color: #333;
+ 
 
 } */
 
@@ -383,7 +377,7 @@ td {
 }
 
 .react-kanban-column {
-    /* background-color: var(--transparent-black); */
+    background-color: white;
     border-radius: 8px;
 }
 
@@ -412,6 +406,7 @@ td {
     background: none;
     border: none;
     cursor: pointer;
+    color: grey;
 }
 
 .column-header {
@@ -419,6 +414,10 @@ td {
     display: flex;
     justify-content: space-between;
     padding: 0px 8px;
+}
+
+.column-header>svg {
+    color: grey;
 }
 
 .react-kanban-column input {
@@ -441,7 +440,6 @@ td {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.294);
 
 }
-
     
 .modal-container {
     display: flex;
@@ -494,8 +492,12 @@ td {
 
 /* USERS PAGE ------------------------------------------*/
 .user-table_container {
+    background-color: grey;
+}
+
+.user-table_container .user-table {
     width: 80%;
-    margin: auto;   
+    margin: 4em auto;
 }
 
 .MuiTableRow-root, 

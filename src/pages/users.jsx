@@ -38,16 +38,18 @@ const Users = () => {
       const theme = useMemo ( () => (
         createTheme({
             palette: {
-                mode: "dark"
+                mode: "light"
             }
         })
       ))
     
       return (
         <main className="user-table_container">
+          <div className="user-table">
             <ThemeProvider theme={theme}>
                 <MaterialReactTable columns={columns} data={userData} />
             </ThemeProvider>
+            </div>
         </main>
       );
 }

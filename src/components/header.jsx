@@ -1,5 +1,6 @@
 import moment from "moment/moment"
 import { BiSearch } from "react-icons/bi"
+import ToggleSwitch from "./toggle"
 
 const Header = () => {
     const date = moment().format("dddd, Do MMM YYYY");
@@ -12,6 +13,7 @@ const Header = () => {
           </div>
 
           <div className="header-profile">
+            <ToggleSwitch />
             <img className="header-profile_image" src="./profile.png" alt="profile image" />
             <div>
                 <p>James Bond</p>

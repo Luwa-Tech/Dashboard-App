@@ -4,7 +4,8 @@ import * as echarts from "echarts"
 const StatisticsChart = () => {
     const option = {
         //NB: change color later
-        color: ['var(--blue-1000)'],
+        color: ['var(--orange)'],
+        // backgroundColor: ['white'],
 
         toolbox: {
             feature: {

@@ -11,7 +11,7 @@ const Orders = () => {
                 </div>
 
                 <div>
-                    <h3>+${groupNumber(item.change)}</h3>
+                    <h3>+<span>${groupNumber(item.change)}</span></h3>
                     <p>items {item.items}</p>
                 </div>
             </div>
