@@ -1,9 +1,13 @@
 import React, { useMemo } from 'react';
 import { MaterialReactTable } from 'material-react-table'
-import { userData } from '../data';
+import { userData } from '../../data';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { useContext } from 'react';
+import { themeContext } from '../../components/themeContext';
+import "./users.css"
 
 const Users = () => {
+  const {isDark} = useContext(themeContext)
     const columns = useMemo(
         () => [
           {
@@ -38,7 +42,7 @@ const Users = () => {
       const theme = useMemo ( () => (
         createTheme({
             palette: {
-                mode: "light"
+                mode: isDark ? "dark" : "light"
             }
         })
       ))

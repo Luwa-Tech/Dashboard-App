@@ -3,8 +3,9 @@ import dayGridPlugin from "@fullcalendar/daygrid"
 import interactionPlugin from "@fullcalendar/interaction"
 import timeGridPlugin from "@fullcalendar/timegrid"
 import { useContext } from "react"
-import { createEventId } from "../data"
-import { initialEventsContext } from "../../storeContext"
+import { createEventId } from "../../data"
+import { initialEventsContext } from "../../../storeContext"
+import "./calendar.css"
 
 const Calendar = () => {
     const {events, setEvents} = useContext(initialEventsContext)

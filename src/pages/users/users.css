@@ -1,0 +1,14 @@
+/* USERS PAGE ------------------------------------------*/
+.user-table_container {
+    background: var(--transparent-black);
+}
+
+.user-table_container .user-table {
+    width: 70%;
+    margin: 4em auto;
+}
+
+.MuiTableRow-root, 
+.MuiTableCell-root {
+    border: none;
+}

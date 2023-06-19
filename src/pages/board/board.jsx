@@ -1,10 +1,11 @@
 import Board, {moveCard, moveColumn, removeCard, addCard} from '@asseinfo/react-kanban'
 import "@asseinfo/react-kanban/dist/styles.css"
 import { useState } from "react"
-import { boardData } from "../data"
+import { boardData } from "../../data"
 import { RxCross2 } from "react-icons/rx"
 import { IoMdAdd } from "react-icons/io"
-import BoardModal from "../components/boardModal"
+import BoardModal from "../../components/boardModal"
+import "./board.css"
 
 const BoardPage = () => {
     const [boards, setBoards] = useState(boardData)

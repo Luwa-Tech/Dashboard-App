@@ -1,0 +1,24 @@
+/* CALENDAR PAGE------------------------------------- */
+.calendar-container> div {
+    width: 70%;
+    max-width: 1100px;
+    margin: 2em auto;
+    padding: 0.7em 0.7em;
+    border-radius: 3px;
+    background: var(--transparent-black);
+    color: var(--text-color);
+    
+ }
+ 
+ .fc-event{
+     background: var(--orange-gradient)!important;
+ }
+ 
+ .fc .fc-timegrid-slot{
+     height: 2.5rem!important;
+ }
+ 
+ /* change border color later */
+ td {
+     border : 1px solid black
+ }

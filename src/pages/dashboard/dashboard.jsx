@@ -1,6 +1,7 @@
-import { cardsData, groupNumber } from "../data"
-import Statistics from "../components/statistics"
-import Orders from "../components/orders"
+import { cardsData, groupNumber } from "../../data"
+import Statistics from "../../components/statistics"
+import Orders from "../../components/orders"
+import "./dashboard.css"
 
 const Dashboard = () => {
     const cardItems = cardsData.map(item => {

@@ -6,12 +6,12 @@ const Orders = () => {
         return (
             <div className="orders_data-container">
                 <div>
-                    <h3>{item.name}</h3>
+                    <h4>{item.name}</h4>
                     <p>{item.type}</p>
                 </div>
 
                 <div>
-                    <h3>+<span>${groupNumber(item.change)}</span></h3>
+                    <h4><span>+${groupNumber(item.change)}</span></h4>
                     <p>items {item.items}</p>
                 </div>
             </div>

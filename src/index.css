@@ -1,21 +1,30 @@
 html {
     font-family: 'Public Sans', sans-serif;
     scroll-behavior: smooth;
-    --transparent-black: rgba(0, 0, 0, 0.294);
+    --transparent-black: white;
     --transparent-grey: rgba(192, 192, 192, 0.294);
-    --black: #111111;
+    --layout: white;
+    --text-color: rgb(71, 71, 71);
+    --theme-container: white;
     --grey: rgba(255, 255, 255, 0.597);
     --orange: #eb5830;
+    --sidebar-color: #eb5830;
     --green: rgb(54, 234, 54);
     --orange-gradient: linear-gradient(
       268.35deg,
       rgba(255, 70, 70, 0.99) 3.47%,
       rgba(255, 114, 70, 0.99) 60.18%
     );
+
 }
 
 html.dark {
-    --orange: green;
+    --layout: #1a1a1a;
+    --theme-container: background: rgba(0, 0, 0, 0.59);
+    --text-color: white;
+    --sidebar-color: white;
+    --transparent-black: rgba(0, 0, 0, 0.294);
+    --transparent-grey: #111;
 }
 
 body {
@@ -36,12 +45,12 @@ p {
 }
 
 .layout {
-    /* height: 100vh; */
     font-family: "Public Sans", sans-serif;
 
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto auto 1fr auto;
+    background-color: var(--layout);
 
 }
 
@@ -74,8 +83,6 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    /* box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4); */
 }
 
 
@@ -98,26 +105,13 @@ p {
 }
 
 .items>svg {
-    color: var(--orange)
+    color: var(--sidebar-color)
 
 }
 
 .items:hover {
     opacity: 0.6;
 }
-
-/* .linkName {
-    position: absolute;
-    background-color: gray;
-    bottom: -30px;
-    right: -40px;
-    font-size: 0.7rem;
-    padding: 0.2em 0.3em;
-    color: white;
-    border-radius: 4px;
-    transition: all 0.5s;
-    visibility: hidden;
-} */
 
 
 /* HEADER COMPONENT------------------------------------ */
@@ -127,8 +121,7 @@ p {
     align-items: center;
     padding: .1em 2em;
     
-
-    /* box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4); */
+    color: var(--text-color);
 }
 
 .header-search_bar {
@@ -142,7 +135,6 @@ p {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    /* box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3); */
     border: 1px solid rgb(212, 210, 210);
 }
 
@@ -152,6 +144,7 @@ p {
     border: none;
     padding: 0;
     width: 100%;
+    color: var(--text-color);
 }
 
 .header-profile {
@@ -162,345 +155,14 @@ p {
 }
 
 .header-profile_image {
-    width: 20%;
-    height: 20%;
+    width: 18%;
+    height: 18%;
 }
 
 .header-profile p {
     line-height: 0.5;
-}
-
-/* DASHBOARD PAGE------------------------------------- */
-
-/* DASHBOARD PAGE LAYOUT */
-.dashboard-wrapper {
-    padding: 3em 2em;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 1.2rem;
-    row-gap: .9rem;
-}
-
-.card {
-    grid-column: 1/span 2;
-    grid-row: span 1;
-}
-
-.orders {
-    grid-column: 3;
-    grid-row: 1/ span 2;
-}
-
-.statistics {
-    grid-column: 1/ span 2;
-}
-/* CARD COMPONENT */
-.card-section {
-    background-color: white;
-    padding: .4em 1.2em;
-    border-radius: 8px;
-    font-size: .9rem;
-}
-
-.card-section div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.card-section h2 {
-    font-weight: 700;
-}
-
-.card-section div select {
-    padding: 0.35em 0.4em;
-    background: var(--orange-gradient);
-    border: none;
-    border-radius: 5px;
-    color: white;
-    transition: all 1s ease-in-out;
-}
-
-.card-flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  
-}
-
-.cards--data_item {
-    display: flex;
-    flex-direction: column;
-}
-
-.cards--data_item div {
-    display: flex;
-    gap: 1em;
-    justify-content: center;
-    align-items: center;
-}
-
-.cards--data_item div .change {
-    color: var(--green);
-    font-size: .7rem;
-}
-
-.cards--data_item .amount {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.cards--data_item .amount span {
-    font-size: .8rem;  
+    font-size: .95rem;
 }
 
 
-/* STATISTICS COMPONENT */
-.statistics-container {
-    background-color: white;
-    padding: 1.3em 1.2em;
-    border-radius: 8px;
-    font-size: .9rem;
-}
 
-.statistics-cards {
-    display: flex;
-    justify-content: space-between;
-    
-}
-
-.statistics-icon_container {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-}
-
-.statistics-arrowIcon {
-    background: var(--orange-gradient);
-    padding: 0.2em 0.2em;
-    border-radius: 8px;
-    color: white;
-}
-
-/* ORDERS COMPONENT */
-.orders-section {
-    background-color: white;
-    padding: .8em 1.5em;
-    border-radius: 8px;
-    font-size: .9rem;
-   
-}
-
-.orders-section>:nth-child(1){
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-}
-
-.orders-section>:nth-child(2) {
-    text-align: center;
-}
-
-.orders_data-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.orders_data-container>:nth-child(2) {
-    text-align: end;
-}
-
-.orders_data-container>:nth-child(2)>h3>span {
-    color: var(--green);
-    margin-left: .2em;
-    font-size: 1rem;
-}
-
-/* CALENDAR PAGE------------------------------------- */
-.calendar-container> div {
-   width: 80%;
-   max-width: 1100px;
-   margin: 2em auto;
-   padding: 0.7em 0.7em;
-   border-radius: 3px;
-   background: white;
-   
-}
-
-.fc-event{
-    background: var(--orange-gradient)!important;
-}
-
-.fc .fc-timegrid-slot{
-    height: 2.5rem!important;
-}
-
-/* change border color later */
-td {
-    border : 1px solid black
-}
-
-/* BOARD PAGE ------------------------------------------*/
-.board-container {
-    padding: 0 0.2em;
-    height: 100vh;
-}
-
-.board-container .board {
-    margin-top: 5em;
-}
-
-.board-container .board h2 {
-    font-size: 1.3rem;
-    text-align: center;
-    font-weight: bold;
-}
-
-
-/* .react-kanban-board{
- color: #333;
- 
-
-} */
-
-/* color: var(--grey); */
-
-.react-kanban-board >:nth-child(1) {
-    width: 100%;
-}
-
-.react-kanban-board>:nth-child(1)> div {
-    width: 24%;
-}
-
-.react-kanban-column {
-    background-color: white;
-    border-radius: 8px;
-}
-
-.react-kanban-column>:nth-child(2)>div>div {
-    width: 100%;
-}
-
-.kanban-card {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    /* background: var(--transparent-black); */
-    padding: 1rem;
-    gap: 1.5rem;
-    margin-top: 1.2rem;
-    border-radius: 5px;
-}
-
-.kanban-card>:nth-child(1) {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.remove-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: grey;
-}
-
-.column-header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0px 8px;
-}
-
-.column-header>svg {
-    color: grey;
-}
-
-.react-kanban-column input {
-    padding: .3em .4em;
-    border: none;
-    border-radius: 3px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.294);
-
-}
-
-.column-header>svg{
-    cursor: pointer
-}
-
-.react-kanban-column-header__button {
-    padding: .3em .4em;
-    border: none;
-    margin-left: .2em;
-    border-radius: 3px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.294);
-
-}
-    
-.modal-container {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    color: white
-}
-
-.modal-container>div {
-    margin-top: 2rem;
-}
-
-.label {
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-
-.input {
-    color: white;
-    font: inherit;
-    margin-top: 12px;
-    display: block;
-    background-color: transparent;
-    outline: none;
-    border: 1px solid rgb(98, 98, 98);
-    font-size: 1.2rem;
-    font-weight: 300;
-    padding: 10px;
-    width: 100%;
-    border-radius: 8px;
-    resize: none
-}
-
-.saveButton {
-    width: 6rem;
-    align-self: flex-end;
-    margin-top: 1.5rem;
-    background: var(--orange-gradient);
-    border: none;
-    padding: 10px;
-    color: white;
-    cursor: pointer;
-    border-radius: 8px;
-}
-
-.saveButton:disabled {
-    background: grey;
-}
-
-
-/* USERS PAGE ------------------------------------------*/
-.user-table_container {
-    background-color: grey;
-}
-
-.user-table_container .user-table {
-    width: 80%;
-    margin: 4em auto;
-}
-
-.MuiTableRow-root, 
-.MuiTableCell-root {
-    border: none;
-}

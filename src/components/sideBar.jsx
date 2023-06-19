@@ -34,7 +34,7 @@ const sideBarItems = [
 const SideBar = () => {
     const navElements = sideBarItems.map(item => {
         return (
-                <NavLink to={item.path} key={item.id}>
+                <NavLink to={item.path} key={item.id} title={item.pageName}>
                     <div className="items">
                         {item.icon}
                     </div>

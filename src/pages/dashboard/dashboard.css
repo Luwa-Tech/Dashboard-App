@@ -1,0 +1,169 @@
+/* DASHBOARD PAGE------------------------------------- */
+
+/* DASHBOARD PAGE LAYOUT */
+.dashboard-wrapper {
+    padding: 3em 2em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1.2rem;
+    row-gap: .9rem;
+    color: var(--text-color);
+}
+
+.card {
+    grid-column: 1/span 2;
+    grid-row: span 1;
+}
+
+.orders {
+    grid-column: 3;
+    grid-row: 1/ span 2;
+}
+
+.statistics {
+    grid-column: 1/ span 2;
+}
+/* CARD COMPONENT */
+.card-section {
+    background-color: var(--transparent-black);
+    padding: .4em 1.2em;
+    border-radius: 8px;
+    font-size: .9rem;
+}
+
+.card-section div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-section h2 {
+    font-weight: 700;
+}
+
+.card-section div select {
+    padding: 0.35em 0.4em;
+    background: var(--orange-gradient);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    transition: all 1s ease-in-out;
+}
+
+.card-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+}
+
+.cards--data_item {
+    display: flex;
+    flex-direction: column;
+}
+
+.cards--data_item div {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards--data_item div .change {
+    color: var(--green);
+    font-size: .7rem;
+}
+
+.cards--data_item .amount {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.cards--data_item .amount span {
+    font-size: .8rem;  
+}
+
+
+/* STATISTICS COMPONENT */
+.statistics-container {
+    background-color: var(--transparent-black);
+    padding: 1.3em 1.2em;
+    border-radius: 8px;
+    font-size: .9rem;
+}
+
+.statistics-cards {
+    display: flex;
+    justify-content: space-between;
+
+    border-top: 0.3px solid rgba(255, 255, 255, 0.185);
+    border-bottom: 0.3px solid rgba(255, 255, 255, 0.185);
+    background: linear-gradient(
+      90deg,
+      rgba(53, 53, 53, 0) 1.21%,
+      rgba(53, 53, 53, 0.46) 49.45%,
+      rgba(53, 53, 53, 0) 103.83%
+    );
+    padding: .1rem 1rem;
+    
+}
+
+.statistics-icon_container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.statistics-arrowIcon {
+    background: var(--orange-gradient);
+    padding: 0.2em 0.2em;
+    border-radius: 8px;
+    color: white;
+}
+
+/* ORDERS COMPONENT */
+.orders-section {
+    background-color: var(--transparent-black);
+    padding: .8em 1.5em;
+    border-radius: 8px;
+    font-size: .9rem;
+   
+}
+
+.orders-section>:nth-child(1){
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.orders-section>:nth-child(2) {
+    text-align: center;
+
+    border-top: 0.3px solid rgba(255, 255, 255, 0.185);
+    border-bottom: 0.3px solid rgba(255, 255, 255, 0.185);
+    background: linear-gradient(
+      90deg,
+      rgba(53, 53, 53, 0) 1.21%,
+      rgba(53, 53, 53, 0.46) 49.45%,
+      rgba(53, 53, 53, 0) 103.83%
+    );
+    padding: .1rem 1rem;
+}
+
+.orders_data-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.orders_data-container>:nth-child(2) {
+    text-align: end;
+}
+
+.orders_data-container>:nth-child(2)>h4>span {
+    color: var(--green);
+    margin-left: .2em;
+    font-size: .9rem;
+}
